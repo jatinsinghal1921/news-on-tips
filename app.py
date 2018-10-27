@@ -61,7 +61,7 @@ def get_rss_data(url):
 	return news_list	
 
 
-ask.intent("AMAZON.FallbackIntent")
+@ask.intent("AMAZON.FallbackIntent")
 def fallback():
 	reply = "I didn't understand you.\n Say 'Show me technology news' to show tech related latest news. Similarly you can use another category."
 	return question(reply)
