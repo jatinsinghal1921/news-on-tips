@@ -1,6 +1,6 @@
 Flask
 Flask-Ask
-gunicorn==19.6.0
+gunicorn
 pyOpenSSL==17.0.0
 cryptography<2.2
 beautifulsoup4
