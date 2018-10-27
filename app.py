@@ -23,7 +23,7 @@ def new_ask():
     for key in url_info.keys():
     	combined_key += key + "\n\n "
 
-    welcome = "Welcome to the news app.\n\n Following are the news categories.\n\n  " + combined_key
+    welcome = "Welcome to the news on tips.\n\n Say the news category to get the top10 latest news related to it.\n\n Following are the news categories supported.\n\n  " + combined_key
     return question(welcome)
 
 
