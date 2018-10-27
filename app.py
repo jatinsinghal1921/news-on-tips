@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 from flask_ask import Ask, statement, question
 from datetime import datetime
-import requests
 import json
 import random
 import feedparser
