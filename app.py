@@ -40,11 +40,11 @@ def newsProvider(category):
 
 def get_rss_data(url):
 	news_list = []
-	news_info = {}
 
 	data = feedparser.parse(url)
 	entries_list = data["entries"]
 	for i in range(10):
+		news_info = {}
 		entry = entries_list[i]
 		print("Title : " + entry["title"])
 
