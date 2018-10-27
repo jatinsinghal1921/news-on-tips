@@ -1,0 +1,5 @@
+{
+	"Arts" : "http://feeds.reuters.com/news/artsculture",
+	"Business" : "http://feeds.reuters.com/reuters/businessNews",
+	"Company News" : "http://feeds.reuters.com/reuters/companyNews"
+}
