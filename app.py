@@ -27,13 +27,13 @@ def new_ask():
 def newsProvider(category):
 	category = category.title()
 	if category not in url_info.keys():
-		return question("Following Category info is not present.\n Please select a different category.")
+		return question("Following Category info is not present.\n\n Please select a different category.")
 	
 	url = url_info[category]
 	reply = ""
 	news_list = get_rss_data(url)
 	for index,news_info in enumerate(news_list):
-		reply += str(index+1) + " " + news_info["title"] + "\n"
+		reply += str(index+1) + " " + news_info["title"] + "\n\n"
 
 	return question(reply)	
 		
