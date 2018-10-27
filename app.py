@@ -33,7 +33,7 @@ def newsProvider(category):
 	reply = ""
 	news_list = get_rss_data(url)
 	for index,news_info in enumerate(news_list):
-		reply += str(index+1) + " " + news_info["title"] + "\n\n"
+		reply += str(index+1) + " " + "\n\n" + news_info["title"] + "\n\n"
 
 	return question(reply)	
 		
