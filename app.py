@@ -30,7 +30,7 @@ def newsProvider(category):
 		return question("Following Category info is not present.\n\n Please select a different category.")
 	
 	url = url_info[category]
-	reply = ""
+	reply = "The top 10 " + category + " news are as follows: \n\n"
 	news_list = get_rss_data(url)
 	for index,news_info in enumerate(news_list):
 		reply += str(index+1) + " " + "\n\n" + news_info["title"] + "\n\n"
