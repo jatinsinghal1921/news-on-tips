@@ -19,7 +19,11 @@ url_info = json.load(f)
 @ask.launch
 def new_ask():
     print("Launch invoked")
-    welcome = "Welcome  to the news app."
+    combined_key = ""
+    for key in url_info.keys():
+    	combined_key += key + "\n\n "
+
+    welcome = "Welcome to the news app.\n\n Following are the news categories.\n\n  " + combined_key
     return question(welcome)
 
 
@@ -56,6 +60,36 @@ def get_rss_data(url):
 		news_list.append(news_info)	
 
 	return news_list	
+
+
+ask.intent("AMAZON.FallbackIntent")
+def fallback():
+	reply = "I didn't understand you.\n Say 'Show me technology news' to show tech related latest news. Similarly you can use another category."
+	return question(reply)
+
+
+@ask.intent("AMAZON.CancelIntent")
+def cancel():
+	reply = "Closing the news."
+	return statement(reply)
+
+
+@ask.intent("AMAZON.StopIntent")
+def fallback():
+	reply = "Closing the news."
+	return statement(reply)
+
+
+@ask.intent("AMAZON.HelpIntent")
+def fallback():
+	reply = "I didn't understand you.\n Say 'Show me technology news' to show tech related latest news. Similarly you can use another category."
+	return question(reply)
+
+
+@ask.intent("AMAZON.NavigateHomeIntent")
+def fallback():
+	reply = "Closing the news."
+	return statement(reply)
 
 
 @app.route("/", methods=["GET", "POST"])
