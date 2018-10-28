@@ -30,8 +30,19 @@ def new_ask():
 def newsProvider(category):
 	category = category.title()
 	if category not in url_info.keys():
-		return question("Following Category info is not present.\n\n Please select a different category.")
-	
+		flag = 0	
+		for key in url_info.keys():	
+			if category in key:
+				category = key
+				flag = 1
+				break
+			else:
+				continue
+
+		if flag != 1:
+			return question("Following Category info is not present.\n\n Please select a different category.")
+
+
 	url = url_info[category]
 	reply = "The top 10 " + category + " news are as follows: \n\n"
 	news_list = get_rss_data(url)
